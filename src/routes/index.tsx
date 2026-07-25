@@ -21,6 +21,14 @@ const PROJECTS = [
     tag: "Web App",
     stack: ["React", "Node.js", "HTML", "CSS"],
     body: "A social recipe platform where users discover, save and publish recipes. Features step-by-step instructions, video walkthroughs, likes and threaded comments.",
+    role: "Full-stack Developer · Aug — Dec 2025",
+    highlights: [
+      "Built React frontend with dynamic recipe browsing, filters and search",
+      "Node.js backend for CRUD on recipes, likes and threaded comments",
+      "Embedded video walkthroughs alongside step-by-step instructions",
+      "Personal recipe collections for each authenticated user",
+    ],
+    link: "https://github.com/Kaviya1808",
   },
   {
     n: "02",
@@ -29,6 +37,14 @@ const PROJECTS = [
     tag: "Web App",
     stack: ["Full-stack", "Role-based Auth"],
     body: "A scalable LMS with course creation, student enrollment and progress tracking. Engineered secure, role-based dashboards for Administrators, Instructors and Students.",
+    role: "Full-stack Developer · Aug 2024",
+    highlights: [
+      "Role-based dashboards for Admins, Instructors and Students",
+      "Course creation, enrollment and progress tracking flows",
+      "Secure authentication and authorization boundaries per role",
+      "Scalable data model designed for growing course catalogs",
+    ],
+    link: "https://github.com/Kaviya1808",
   },
   {
     n: "03",
@@ -37,6 +53,14 @@ const PROJECTS = [
     tag: "Internship · TechVolt",
     stack: ["HTML5", "CSS3", "JavaScript", "REST"],
     body: "Responsive menu-viewing and ordering experience. Built interactive UI components with a focus on dynamic data rendering, API integration and cross-browser reliability.",
+    role: "Frontend Intern · July 2025",
+    highlights: [
+      "Responsive menu and ordering UI across mobile and desktop",
+      "Interactive components with dynamic data rendering",
+      "REST API integration for live menu and order flow",
+      "Cross-browser compatibility and UX polish",
+    ],
+    link: "https://github.com/Kaviya1808",
   },
 ];
 
