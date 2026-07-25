@@ -107,12 +107,21 @@ function Portfolio() {
               </a>
             ))}
           </nav>
-          <a
-            href="mailto:kaviya.raju2005@gmail.com"
-            className="hidden md:inline-flex items-center gap-2 text-sm font-medium border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-background transition-colors"
-          >
-            Let’s talk <ArrowUpRight className="h-4 w-4" />
-          </a>
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="/kaviya-ar-resume.pdf"
+              download="Kaviya-AR-Resume.pdf"
+              className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-accent transition-colors"
+            >
+              <Download className="h-4 w-4" /> Resume
+            </a>
+            <a
+              href="mailto:kaviya.raju2005@gmail.com"
+              className="inline-flex items-center gap-2 text-sm font-medium border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-background transition-colors"
+            >
+              Let’s talk <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </header>
 
