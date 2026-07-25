@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, Phone, Github, Linkedin, MapPin } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Mail, Phone, Github, Linkedin, MapPin, Download, Plus, Minus } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -20,6 +21,14 @@ const PROJECTS = [
     tag: "Web App",
     stack: ["React", "Node.js", "HTML", "CSS"],
     body: "A social recipe platform where users discover, save and publish recipes. Features step-by-step instructions, video walkthroughs, likes and threaded comments.",
+    role: "Full-stack Developer · Aug — Dec 2025",
+    highlights: [
+      "Built React frontend with dynamic recipe browsing, filters and search",
+      "Node.js backend for CRUD on recipes, likes and threaded comments",
+      "Embedded video walkthroughs alongside step-by-step instructions",
+      "Personal recipe collections for each authenticated user",
+    ],
+    link: "https://github.com/Kaviya1808",
   },
   {
     n: "02",
@@ -28,6 +37,14 @@ const PROJECTS = [
     tag: "Web App",
     stack: ["Full-stack", "Role-based Auth"],
     body: "A scalable LMS with course creation, student enrollment and progress tracking. Engineered secure, role-based dashboards for Administrators, Instructors and Students.",
+    role: "Full-stack Developer · Aug 2024",
+    highlights: [
+      "Role-based dashboards for Admins, Instructors and Students",
+      "Course creation, enrollment and progress tracking flows",
+      "Secure authentication and authorization boundaries per role",
+      "Scalable data model designed for growing course catalogs",
+    ],
+    link: "https://github.com/Kaviya1808",
   },
   {
     n: "03",
@@ -36,6 +53,14 @@ const PROJECTS = [
     tag: "Internship · TechVolt",
     stack: ["HTML5", "CSS3", "JavaScript", "REST"],
     body: "Responsive menu-viewing and ordering experience. Built interactive UI components with a focus on dynamic data rendering, API integration and cross-browser reliability.",
+    role: "Frontend Intern · July 2025",
+    highlights: [
+      "Responsive menu and ordering UI across mobile and desktop",
+      "Interactive components with dynamic data rendering",
+      "REST API integration for live menu and order flow",
+      "Cross-browser compatibility and UX polish",
+    ],
+    link: "https://github.com/Kaviya1808",
   },
 ];
 
@@ -68,6 +93,7 @@ const CERTS = [
 ];
 
 function Portfolio() {
+  const [openProject, setOpenProject] = useState<string | null>("01");
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border">
@@ -82,12 +108,21 @@ function Portfolio() {
               </a>
             ))}
           </nav>
-          <a
-            href="mailto:kaviya.raju2005@gmail.com"
-            className="hidden md:inline-flex items-center gap-2 text-sm font-medium border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-background transition-colors"
-          >
-            Let’s talk <ArrowUpRight className="h-4 w-4" />
-          </a>
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="/kaviya-ar-resume.pdf"
+              download="Kaviya-AR-Resume.pdf"
+              className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-accent transition-colors"
+            >
+              <Download className="h-4 w-4" /> Resume
+            </a>
+            <a
+              href="mailto:kaviya.raju2005@gmail.com"
+              className="inline-flex items-center gap-2 text-sm font-medium border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-background transition-colors"
+            >
+              Let’s talk <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </header>
 
@@ -115,6 +150,34 @@ function Portfolio() {
                 Open to internships & collaborations
               </div>
             </div>
+          </div>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href="/kaviya-ar-resume.pdf"
+              download="Kaviya-AR-Resume.pdf"
+              className="group inline-flex items-center gap-3 bg-ink text-background rounded-full pl-6 pr-3 py-3 hover:bg-accent transition-colors"
+            >
+              <span className="text-sm font-medium">Download Resume</span>
+              <span className="h-8 w-8 rounded-full bg-background text-ink grid place-items-center group-hover:translate-y-0.5 transition-transform">
+                <Download className="h-4 w-4" />
+              </span>
+            </a>
+            <a
+              href="https://github.com/Kaviya1808"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium border border-ink px-5 py-3 rounded-full hover:bg-ink hover:text-background transition-colors"
+            >
+              <Github className="h-4 w-4" /> View GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/kaviya-rajendran-7b5b20292"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-ink transition-colors px-2 py-3"
+            >
+              <Linkedin className="h-4 w-4" /> LinkedIn
+            </a>
           </div>
         </div>
 
@@ -170,38 +233,85 @@ function Portfolio() {
             <span className="hidden md:block text-sm text-muted-foreground">2024 — 2025</span>
           </div>
           <div className="divide-y divide-border border-y border-border">
-            {PROJECTS.map((p) => (
-              <article
-                key={p.n}
-                className="group grid md:grid-cols-12 gap-6 py-10 md:py-14 items-start hover:bg-background/60 transition-colors px-2 md:px-4 -mx-2 md:-mx-4 rounded-md"
-              >
-                <div className="md:col-span-1 font-mono text-xs text-muted-foreground pt-2">{p.n}</div>
-                <div className="md:col-span-6">
-                  <h3 className="font-display text-3xl md:text-5xl text-ink leading-tight">{p.title}</h3>
-                  <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                    <span className="uppercase tracking-widest text-muted-foreground">{p.tag}</span>
-                    <span className="text-border">·</span>
-                    <span className="text-muted-foreground">{p.year}</span>
-                  </div>
-                </div>
-                <div className="md:col-span-4 space-y-4">
-                  <p className="text-foreground/80 leading-relaxed">{p.body}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {p.stack.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs font-mono px-2.5 py-1 rounded-full border border-border bg-background text-foreground/70"
-                      >
-                        {s}
+            {PROJECTS.map((p) => {
+              const isOpen = openProject === p.n;
+              return (
+                <article key={p.n} className="group">
+                  <button
+                    type="button"
+                    onClick={() => setOpenProject(isOpen ? null : p.n)}
+                    aria-expanded={isOpen}
+                    className="w-full text-left grid md:grid-cols-12 gap-6 py-10 md:py-14 items-start hover:bg-background/60 transition-colors px-2 md:px-4 -mx-2 md:-mx-4 rounded-md cursor-pointer"
+                  >
+                    <div className="md:col-span-1 font-mono text-xs text-muted-foreground pt-2">{p.n}</div>
+                    <div className="md:col-span-6">
+                      <h3 className="font-display text-3xl md:text-5xl text-ink leading-tight">{p.title}</h3>
+                      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+                        <span className="uppercase tracking-widest text-muted-foreground">{p.tag}</span>
+                        <span className="text-border">·</span>
+                        <span className="text-muted-foreground">{p.year}</span>
+                      </div>
+                    </div>
+                    <div className="md:col-span-4 space-y-4">
+                      <p className="text-foreground/80 leading-relaxed">{p.body}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {p.stack.map((s) => (
+                          <span
+                            key={s}
+                            className="text-xs font-mono px-2.5 py-1 rounded-full border border-border bg-background text-foreground/70"
+                          >
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="md:col-span-1 md:justify-self-end pt-2">
+                      <span className="h-10 w-10 rounded-full border border-ink grid place-items-center text-ink transition-transform hover:bg-ink hover:text-background">
+                        {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                       </span>
-                    ))}
+                    </div>
+                  </button>
+                  <div
+                    className={`grid transition-all duration-500 ease-out ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="grid md:grid-cols-12 gap-6 pb-10 md:pb-14 px-2 md:px-4">
+                        <div className="md:col-span-1" />
+                        <div className="md:col-span-6">
+                          <div className="text-xs uppercase tracking-widest text-accent mb-3">Role</div>
+                          <p className="text-ink">{p.role}</p>
+                          <div className="mt-6">
+                            <a
+                              href={p.link}
+                              target="_blank"
+                              rel="noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="inline-flex items-center gap-2 text-sm font-medium border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-background transition-colors"
+                            >
+                              <Github className="h-4 w-4" /> View on GitHub
+                              <ArrowUpRight className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="md:col-span-5">
+                          <div className="text-xs uppercase tracking-widest text-accent mb-3">Highlights</div>
+                          <ul className="space-y-2">
+                            {p.highlights.map((h) => (
+                              <li key={h} className="flex gap-3 text-foreground/85">
+                                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                                <span>{h}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="md:col-span-1 md:justify-self-end pt-2">
-                  <ArrowUpRight className="h-6 w-6 text-ink transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
