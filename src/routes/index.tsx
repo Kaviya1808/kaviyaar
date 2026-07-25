@@ -150,6 +150,34 @@ function Portfolio() {
               </div>
             </div>
           </div>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href="/kaviya-ar-resume.pdf"
+              download="Kaviya-AR-Resume.pdf"
+              className="group inline-flex items-center gap-3 bg-ink text-background rounded-full pl-6 pr-3 py-3 hover:bg-accent transition-colors"
+            >
+              <span className="text-sm font-medium">Download Resume</span>
+              <span className="h-8 w-8 rounded-full bg-background text-ink grid place-items-center group-hover:translate-y-0.5 transition-transform">
+                <Download className="h-4 w-4" />
+              </span>
+            </a>
+            <a
+              href="https://github.com/Kaviya1808"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium border border-ink px-5 py-3 rounded-full hover:bg-ink hover:text-background transition-colors"
+            >
+              <Github className="h-4 w-4" /> View GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/kaviya-rajendran-7b5b20292"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-ink transition-colors px-2 py-3"
+            >
+              <Linkedin className="h-4 w-4" /> LinkedIn
+            </a>
+          </div>
         </div>
 
         <div className="border-y border-border bg-surface overflow-hidden">
