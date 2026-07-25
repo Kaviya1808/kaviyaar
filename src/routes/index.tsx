@@ -93,6 +93,7 @@ const CERTS = [
 ];
 
 function Portfolio() {
+  const [openProject, setOpenProject] = useState<string | null>("01");
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border">
