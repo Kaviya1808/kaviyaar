@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, Phone, Github, Linkedin, MapPin } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Mail, Phone, Github, Linkedin, MapPin, Download, Plus, Minus } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
