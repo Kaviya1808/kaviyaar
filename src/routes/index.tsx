@@ -233,38 +233,85 @@ function Portfolio() {
             <span className="hidden md:block text-sm text-muted-foreground">2024 — 2025</span>
           </div>
           <div className="divide-y divide-border border-y border-border">
-            {PROJECTS.map((p) => (
-              <article
-                key={p.n}
-                className="group grid md:grid-cols-12 gap-6 py-10 md:py-14 items-start hover:bg-background/60 transition-colors px-2 md:px-4 -mx-2 md:-mx-4 rounded-md"
-              >
-                <div className="md:col-span-1 font-mono text-xs text-muted-foreground pt-2">{p.n}</div>
-                <div className="md:col-span-6">
-                  <h3 className="font-display text-3xl md:text-5xl text-ink leading-tight">{p.title}</h3>
-                  <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                    <span className="uppercase tracking-widest text-muted-foreground">{p.tag}</span>
-                    <span className="text-border">·</span>
-                    <span className="text-muted-foreground">{p.year}</span>
-                  </div>
-                </div>
-                <div className="md:col-span-4 space-y-4">
-                  <p className="text-foreground/80 leading-relaxed">{p.body}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {p.stack.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs font-mono px-2.5 py-1 rounded-full border border-border bg-background text-foreground/70"
-                      >
-                        {s}
+            {PROJECTS.map((p) => {
+              const isOpen = openProject === p.n;
+              return (
+                <article key={p.n} className="group">
+                  <button
+                    type="button"
+                    onClick={() => setOpenProject(isOpen ? null : p.n)}
+                    aria-expanded={isOpen}
+                    className="w-full text-left grid md:grid-cols-12 gap-6 py-10 md:py-14 items-start hover:bg-background/60 transition-colors px-2 md:px-4 -mx-2 md:-mx-4 rounded-md cursor-pointer"
+                  >
+                    <div className="md:col-span-1 font-mono text-xs text-muted-foreground pt-2">{p.n}</div>
+                    <div className="md:col-span-6">
+                      <h3 className="font-display text-3xl md:text-5xl text-ink leading-tight">{p.title}</h3>
+                      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+                        <span className="uppercase tracking-widest text-muted-foreground">{p.tag}</span>
+                        <span className="text-border">·</span>
+                        <span className="text-muted-foreground">{p.year}</span>
+                      </div>
+                    </div>
+                    <div className="md:col-span-4 space-y-4">
+                      <p className="text-foreground/80 leading-relaxed">{p.body}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {p.stack.map((s) => (
+                          <span
+                            key={s}
+                            className="text-xs font-mono px-2.5 py-1 rounded-full border border-border bg-background text-foreground/70"
+                          >
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="md:col-span-1 md:justify-self-end pt-2">
+                      <span className="h-10 w-10 rounded-full border border-ink grid place-items-center text-ink transition-transform hover:bg-ink hover:text-background">
+                        {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                       </span>
-                    ))}
+                    </div>
+                  </button>
+                  <div
+                    className={`grid transition-all duration-500 ease-out ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="grid md:grid-cols-12 gap-6 pb-10 md:pb-14 px-2 md:px-4">
+                        <div className="md:col-span-1" />
+                        <div className="md:col-span-6">
+                          <div className="text-xs uppercase tracking-widest text-accent mb-3">Role</div>
+                          <p className="text-ink">{p.role}</p>
+                          <div className="mt-6">
+                            <a
+                              href={p.link}
+                              target="_blank"
+                              rel="noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="inline-flex items-center gap-2 text-sm font-medium border border-ink px-4 py-2 rounded-full hover:bg-ink hover:text-background transition-colors"
+                            >
+                              <Github className="h-4 w-4" /> View on GitHub
+                              <ArrowUpRight className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="md:col-span-5">
+                          <div className="text-xs uppercase tracking-widest text-accent mb-3">Highlights</div>
+                          <ul className="space-y-2">
+                            {p.highlights.map((h) => (
+                              <li key={h} className="flex gap-3 text-foreground/85">
+                                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                                <span>{h}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="md:col-span-1 md:justify-self-end pt-2">
-                  <ArrowUpRight className="h-6 w-6 text-ink transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
