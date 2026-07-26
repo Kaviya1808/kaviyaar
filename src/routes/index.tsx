@@ -202,10 +202,17 @@ function Portfolio() {
             <span className="text-emerald-400">Available for opportunities</span>
           </div>
 
-          <h1 className="fade-up font-display text-[13vw] md:text-[8.5rem] leading-[0.88] text-ink">
-            Kaviya <br />
-            <span className="text-gradient">A&nbsp;R.</span>
-          </h1>
+          <div className="fade-up flex items-end justify-between gap-4 md:gap-8">
+            <h1 className="font-display text-[13vw] md:text-[8.5rem] leading-[0.88] text-ink">
+              Kaviya <br />
+              <span className="text-gradient">A&nbsp;R.</span>
+            </h1>
+            <img
+              src={photoAsset.url}
+              alt="Kaviya A R"
+              className="hidden sm:block w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 object-cover rounded-2xl border border-border shadow-2xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500"
+            />
+          </div>
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
             <p className="fade-up md:col-span-7 text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed">
