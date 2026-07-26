@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import photoAsset from "@/assets/kaviya-photo.jpeg.asset.json";
 import {
   ArrowUpRight,
   Mail,
