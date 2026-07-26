@@ -41,11 +41,8 @@ const SKILLS: { icon: string; name: string }[] = [
   { icon: "📜", name: "JavaScript" },
   { icon: "🌐", name: "HTML5" },
   { icon: "🎨", name: "CSS3" },
-  { icon: "⚛️", name: "React.js" },
   { icon: "🟢", name: "Node.js" },
-  { icon: "🍃", name: "MongoDB" },
   { icon: "🗄️", name: "MySQL" },
-  { icon: "🔀", name: "Git" },
   { icon: "🧠", name: "UI / UX" },
   { icon: "📐", name: "Figma" },
 ];
@@ -203,14 +200,13 @@ function Portfolio() {
           </div>
 
           <div className="fade-up flex items-end justify-between gap-4 md:gap-8">
-            <h1 className="font-display text-[13vw] md:text-[8.5rem] leading-[0.88] text-ink">
-              Kaviya <br />
-              <span className="text-gradient">A&nbsp;R.</span>
+            <h1 className="font-display text-[12vw] md:text-[7.5rem] leading-[0.9] text-ink whitespace-nowrap">
+              Kaviya <span className="text-gradient">A R.</span>
             </h1>
             <img
               src={photoAsset.url}
               alt="Kaviya A R"
-              className="w-16 h-16 sm:w-24 sm:h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 object-cover rounded-2xl border border-border shadow-2xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500 shrink-0"
+              className="w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 object-cover rounded-2xl border border-border shadow-2xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500 shrink-0"
             />
           </div>
 
