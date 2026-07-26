@@ -210,7 +210,7 @@ function Portfolio() {
             <img
               src={photoAsset.url}
               alt="Kaviya A R"
-              className="hidden sm:block w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 object-cover rounded-2xl border border-border shadow-2xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500"
+              className="w-16 h-16 sm:w-24 sm:h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 object-cover rounded-2xl border border-border shadow-2xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500 shrink-0"
             />
           </div>
 
