@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import photoAsset from "@/assets/kaviya-photo.jpeg.asset.json";
 import {
   ArrowUpRight,
   Mail,
@@ -204,7 +203,7 @@ function Portfolio() {
               Kaviya <span className="text-gradient">A R.</span>
             </h1>
             <img
-              src={photoAsset.url}
+              src="/kaviya-photo.jpeg"
               alt="Kaviya A R"
               className="w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 object-cover rounded-2xl border border-border shadow-2xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500 shrink-0"
             />
